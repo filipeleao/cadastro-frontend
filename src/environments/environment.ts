@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  // endpoint: 'http://192.168.50.29:8889/api/',
-  endpoint: 'http://localhost:8080/api/person/',
+   endpoint: 'https://cadastro-filipe.herokuapp.com/api/',
+  //endpoint: 'http://localhost:8080/api/person/',
   auth: 'Basic dXNlcjpzZW5oYS5kaWZpY2ls',
 };
 
