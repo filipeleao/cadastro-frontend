@@ -1,0 +1,22 @@
+
+mat-icon {
+  cursor: pointer;
+
+}
+
+
+/* Structure */
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.card-table {
+  width: 80%;
+  position: center;
+  margin: 3% auto;
+}

@@ -1,0 +1,48 @@
+<mat-card class="card-table">
+  <mat-card-title>
+    Pessoa:
+  </mat-card-title>
+  <mat-card-content>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="card-table">
+  <mat-card-title>
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Coloque os dados da pesquisa">
+    </mat-form-field>
+  </mat-card-title>
+  <mat-card-content>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Position Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> NOME</th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="cpf">
+        <th mat-header-cell *matHeaderCellDef> CPF</th>
+        <td mat-cell *matCellDef="let element"> {{element.cpf}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> EMAIL</th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="acoes">
+        <th mat-header-cell *matHeaderCellDef> AÇÕES</th>
+        <td mat-cell *matCellDef="let element">
+          <mat-icon (click)="delete(element.cpf)">delete</mat-icon>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </mat-card-content>
+</mat-card>
+
