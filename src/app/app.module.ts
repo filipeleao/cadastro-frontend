@@ -10,6 +10,11 @@ import {MatCardModule} from '@angular/material/card';
 import {HttpClientModule} from '@angular/common/http';
 import {MatIconModule} from '@angular/material/icon';
 import {ToastrModule} from 'ngx-toastr';
+import {ReactiveFormsModule} from '@angular/forms';
+import {IConfig, NgxMaskModule} from 'ngx-mask';
+
+
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
 @NgModule({
   declarations: [
@@ -33,6 +38,8 @@ import {ToastrModule} from 'ngx-toastr';
       positionClass: 'toast-top-right',
       preventDuplicates: true,
     }),
+    ReactiveFormsModule,
+    NgxMaskModule.forRoot(options)
   ],
   providers: [],
   bootstrap: [AppComponent]

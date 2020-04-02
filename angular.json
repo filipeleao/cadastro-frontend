@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "cadastro-frontend"
+  "defaultProject": "cadastro-frontend",
+  "cli": {
+    "analytics": "62e4f04d-ebea-40c0-9d6d-c081c2e6c6a8"
+  }
 }

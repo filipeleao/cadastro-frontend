@@ -1,8 +1,96 @@
-<mat-card class="card-table">
+<mat-card class="card-form">
   <mat-card-title>
-    Pessoa:
+    Informações:
   </mat-card-title>
   <mat-card-content>
+    <section>
+      <form [formGroup]="_form">
+        <mat-form-field>
+          <mat-label>Nome</mat-label>
+          <input
+            formControlName="name"
+            matInput
+            type="text"
+            placeholder="Nome"
+            required
+            [(ngModel)]="person.name"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Gênero</mat-label>
+          <select
+            formControlName="sex"
+            matNativeControl
+            required
+            [(ngModel)]="person.gender"
+          >
+            <option  value="MALE">Masculino</option>
+            <option  value="FEMALE">Feminino</option>
+          </select>
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            formControlName="email"
+            matInput
+            type="email"
+            placeholder="Email"
+            [(ngModel)]="person.email"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            formControlName="birthDate"
+            matInput
+            type="date"
+            placeholder="Data de Nascimento"
+            inputmode="numeric"
+            required
+            [(ngModel)]="person.dateOfBirth"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            formControlName="naturality"
+            matInput
+            type="text"
+            placeholder="Naturalidade"
+            [(ngModel)]="person.naturalness"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            formControlName="nationality"
+            matInput
+            type="text"
+            placeholder="Nacionalidade"
+            [(ngModel)]="person.nationality"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            formControlName="cpf"
+            matInput
+            type="text"
+            inputmode="numeric"
+            mask="000.000.000-00"
+            placeholder="CPF"
+            required
+            [(ngModel)]="person.cpf"
+          />
+        </mat-form-field>
+
+        <button
+          (click)="send()"
+        >
+          Enviar
+        </button>
+        <button
+          (click)="clear()"
+        >
+          Limpar
+        </button>
+      </form>
+    </section>
   </mat-card-content>
 </mat-card>
 
@@ -41,7 +129,7 @@
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow(row)" style="cursor: pointer;"></tr>
     </table>
   </mat-card-content>
 </mat-card>
